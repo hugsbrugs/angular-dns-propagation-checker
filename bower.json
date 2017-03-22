@@ -1,0 +1,21 @@
+{
+  "name": "angular-dns-propagation-checker",
+  "description": "make DNS propagation check in your AngularJS App",
+  "main": "index.html",
+  "authors": [
+    "Hugo Maugey"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "angular",
+    "dns"
+  ],
+  "homepage": "https://hugo.maugey.fr/tools/dns-propagation-checker",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
