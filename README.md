@@ -4,7 +4,7 @@ A one folder drop to your PHP server to get your own DNS propagation checker ! B
 
 [Free Online DNS Propagation Checker](https://hugo.maugey.fr//tools/dns-propagation-checker)
 
-[![DNS Propagation Screenshot](/angular-dsn-propagation-checker.png?raw=true "DNS Propagation Screenshot")](https://hugsbrugs.github.com/angular-dns-propagation-checker)
+[![DNS Propagation Screenshot](/demo/angular-dsn-propagation-checker.png?raw=true "DNS Propagation Screenshot")](https://hugsbrugs.github.com/angular-dns-propagation-checker)
 
 Angular Single Page Application with local storage and [moment.js](http://momentjs.com/) as main javascript dependencies. Bootstrap for template.
 
@@ -37,7 +37,7 @@ npm  install hugsbrugs/angular-dns-propagation-checker --save
 ## Usage
 
 ```html
-<link rel="stylesheet" href="/dns-checker.min.css"/>
+<link rel="stylesheet" href="dns-checker.min.css"/>
 <script src="dns-checker.min.js"></script>
 ```
 
@@ -65,7 +65,7 @@ myApp.config(['dnsCheckerProvider',
         dnsCheckerProvider.setApiGetDns('get_node.php');
     }
 ]);
-```php
+```
 
 In HTML template
 ```html
@@ -75,9 +75,10 @@ In HTML template
 ## Contribute
 
 npm install
+
 gulp build
 
-gulp
+gulp : not working since PHP files are downloaded and not executed by node server : quite normal so perhaps use gulp-connect-php ... or simply a real PHP server : drop this repo in you web folder and visit index.html
 
 
 ## Author
