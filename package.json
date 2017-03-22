@@ -1,6 +1,6 @@
 {
   "name": "angular-dns-propagation-checker",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "make DNS propagation check in your AngularJS App",
   "main": "index.js",
   "dependencies": {},
@@ -28,6 +28,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Hugo Maugey",
+  "author": {
+    "name": "Hugo Maugey",
+    "email": "hugo@maugey.fr",
+    "url": "https://hugo.maugey.fr"
+  },
   "license": "ISC"
 }

@@ -29,12 +29,12 @@ Angular Moment (Moment.js)
 
 Bower
 ```
-bower install hugsbrugs/angular-dns-propagation-checker --save
+bower install angular-dns-propagation-checker --save
 ```
 
 NPM
 ```
-npm  install hugsbrugs/angular-dns-propagation-checker --save
+npm  install angular-dns-propagation-checker --save
 ```
 
 ## Usage
