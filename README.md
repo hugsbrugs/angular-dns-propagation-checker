@@ -4,7 +4,7 @@ A one folder drop to your PHP server to get your own DNS propagation checker ! B
 
 [Free Online DNS Propagation Checker](https://hugo.maugey.fr//tools/dns-propagation-checker)
 
-[![DNS Propagation Screenshot](/demo/angular-dsn-propagation-checker.png?raw=true "DNS Propagation Screenshot")](https://hugsbrugs.github.com/angular-dns-propagation-checker)
+[![DNS Propagation Screenshot](/doc/angular-dsn-propagation-checker.png?raw=true "DNS Propagation Screenshot")](https://hugsbrugs.github.com/angular-dns-propagation-checker)
 
 Angular Single Page Application with local storage and [moment.js](http://momentjs.com/) as main javascript dependencies. Bootstrap for template.
 
@@ -18,8 +18,11 @@ This can be a good starter place to learn AngularJS because it involves followin
 ## Dependencies
 
 Font Awesome
+
 Angular (Animate, Resource, Sanitize, Cookies, Touch)
+
 Angular UI Bootstrap  
+
 Angular Moment (Moment.js)
 
 ## Install
