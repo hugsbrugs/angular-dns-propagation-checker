@@ -2,9 +2,9 @@
 
 A one folder drop to your PHP server to get your own DNS propagation checker ! Based on an open API (still require PHP server side since API does not support JSONP nor CORS).
 
-[Free Online DNS Propagation Checker](https://hugo.maugey.fr//tools/dns-propagation-checker)
+[Free Online DNS Propagation Checker](https://hugo.maugey.fr/tools/dns-propagation-checker)
 
-[![DNS Propagation Screenshot](/doc/angular-dsn-propagation-checker.png?raw=true "DNS Propagation Screenshot")](https://hugsbrugs.github.com/angular-dns-propagation-checker)
+[![DNS Propagation Screenshot](/doc/angular-dsn-propagation-checker.png?raw=true "DNS Propagation Screenshot")](https://hugo.maugey.fr/tools/dns-propagation-checker)
 
 Angular Single Page Application with local storage and [moment.js](http://momentjs.com/) as main javascript dependencies. Bootstrap for template.
 
