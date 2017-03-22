@@ -1,0 +1,24 @@
+iframe {
+    border: none;
+    width: 100%;
+    height: 84px;
+}
+.no-transition {
+    -webkit-transition: none;
+    -o-transition: none;
+    transition: none;
+}
+.flag{
+    display: inline-block;
+}
+.table-hug{
+    margin-bottom: 0px;
+}
+.table-hug tr:first-child td{
+    border-top: 0px;
+}
+tr.success>td,
+.table>tbody>tr.success>td
+{
+    background-color: #fff !important;
+}

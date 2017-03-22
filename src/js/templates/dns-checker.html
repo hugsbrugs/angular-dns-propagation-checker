@@ -1,0 +1,167 @@
+<div class="row">
+
+    <div class="col-md-4" id="toolbar" >
+
+        <div class="panel panel-default">
+            
+            <div class="panel-heading">
+                <h3 class="panel-title">Options</h3>
+            </div>
+        
+            <div class="panel-body">
+
+                <!-- <iframe name="autocomplete_host" id="autocomplete-host" src=""></iframe> -->
+
+                <form name="DnsForm" ng-submit="check_all_dns()" novalidate>
+
+                    <div class="form-group">
+                        <label for="domain">Domain</label>
+                        <div class="input-group">
+                            <span class="input-group-addon">http://</span>
+                            <input
+                                type="text"
+                                class="form-control"
+                                id="domain"
+                                name="domain"
+                                ng-model="domain.url"
+                                required required="required">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="record-type">Record Type</label>
+
+                        <div class="btn-group">
+                            <label
+                                class="btn btn-sm btn-default"
+                                ng-model="domain.record" uib-btn-radio="'a'">A
+                            </label>
+                            <label
+                                class="btn btn-sm btn-default"
+                                ng-model="domain.record" uib-btn-radio="'cname'">CNAME
+                            </label>
+                            <label
+                                class="btn btn-sm btn-default"
+                                ng-model="domain.record" uib-btn-radio="'mx'">MX
+                            </label>
+                            <label
+                                class="btn btn-sm btn-default"
+                                ng-model="domain.record" uib-btn-radio="'ns'">NS
+                            </label>
+                            <label
+                                class="btn btn-sm btn-default"
+                                ng-model="domain.record" uib-btn-radio="'spf'">SPF
+                            </label>
+                            <label
+                                class="btn btn-sm btn-default"
+                                ng-model="domain.record" uib-btn-radio="'txt'">TXT
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="domain">Expected Value</label> <small>optional regex</small>
+                        <input
+                            type="text"
+                            ng-model="domain.expected"
+                            class="form-control"
+                            id="expected"
+                            name="expected">
+                    </div>
+
+                    <div class="form-group">
+                        <button
+                            class="btn btn-default pull-right"
+                            type="submit"
+                            id="go"
+                            ng-disabled="DnsForm.$invalid || dns_check_running"
+                            data-loading-text="Running...">Go !
+                        </button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <div class="panel-body">
+                
+                <i class="fa fa-book"></i> <a href="http://www.dns-lg.com/" target="_blank">API Documentation</a>
+                <hr>
+                <i class="fa fa-github"></i> <a href="https://github.com/hugsbrugs/angularjs-dns-propagation-checker" title="Github Repository">Code on Github</a>
+                <hr>
+                <i class="fa fa-user-md"></i> <a href="https://hugo.maugey.fr" title="Webmaster AngularJS">Author</a>
+            </div>
+        </div>
+
+        <!-- Debug -->
+        <!-- {{domain|json}} -->
+    </div>
+
+    <div class="col-md-8">
+
+        <!-- Debug -->
+        <!-- {{nodes|json}} -->
+
+        <!-- Progress Bar -->
+        <uib-progress ng-hide="check.total==0" max="check.total" value="check.current" class="progress-striped" animate="true">
+            <uib-bar value="check.success" type="success">
+                <i>{{((check.success/check.total)*100) | number:0}}%</i>
+            </uib-bar>
+            <uib-bar value="check.warning" type="warning">
+                <i>{{((check.warning/check.total)*100) | number:0}}%</i>
+            </uib-bar>
+            <uib-bar value="check.danger" type="danger">
+                <i>{{((check.danger/check.total)*100) | number:0}}%</i>
+            </uib-bar>        
+        </uib-progress>
+        
+        <!-- Debug -->
+        <!-- {{check|json}} -->
+        
+        <!-- DNS Nodes Table -->
+        <div class="table-responsive">
+        <table class="table table-condensed">
+            <thead>
+                <tr>
+                    <th>Server</th>
+                    <th>Result</th>
+                    <th>TTL</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="node in nodes track by $index" id="{{node.name}}" class="{{node.status}}">
+                    <td width="175" class="country">
+                        <span uib-tooltip="{{node.operator}}">
+                            <div class="flag flag-{{node.isocc}}"></div>
+                            {{node.country}}
+                        </span>
+                    </td>
+                    
+                    <td colspan="2" ng-if="node.result!='OK'">
+                        <!-- {{node.result}} -->
+                        <span ng-bind-html="node.result"></span>
+                    </td>
+
+                    <td colspan="2" ng-if="node.result=='OK'">
+                        <table class="table table-hover table-condensed table-hug">
+                            <tbody>
+                                <tr ng-repeat="(key, value) in node.results track by $index">
+                                <!-- class="{{value.status}}" -->
+                                    <td>
+                                        <span ng-show="value.status=='success'" class="text-success"><i class="fa fa-check"></i></span>
+                                        <span ng-show="value.status=='danger'" class="text-danger"><i class="fa fa-times"></i></span>
+                                    </td>
+                                    <td>{{value.res}}</td>
+                                    <td width="100"><span uib-tooltip="{{value.ttl}} seconds">{{value.ttl | amDurationFormat : 'seconds'}}</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        </div>
+    </div>
+
+</div>
