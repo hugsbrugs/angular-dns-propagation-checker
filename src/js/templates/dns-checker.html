@@ -131,7 +131,7 @@
             </thead>
             <tbody>
                 <tr ng-repeat="node in nodes track by $index" id="{{node.name}}" class="{{node.status}}">
-                    <td width="175" class="country">
+                    <td class="country">
                         <span uib-tooltip="{{node.operator}}">
                             <div class="flag flag-{{node.isocc}}"></div>
                             {{node.country}}
