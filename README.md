@@ -83,6 +83,8 @@ gulp build
 
 gulp : not working since PHP files are downloaded and not executed by node server : quite normal so perhaps use gulp-connect-php ... or simply a real PHP server : drop this repo in you web folder and visit index.html
 
+## Changelog
+23-03-2017 : Add Flag Sprite as base64 in flag.css to avoid image path issue ([Online Base64 Encoder](https://hugo.maugey.fr/conversion/image-base-64))
 
 ## Author
 

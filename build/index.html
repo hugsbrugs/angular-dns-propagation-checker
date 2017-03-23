@@ -22,9 +22,9 @@
     <link rel="shortcut icon" href="favicon.ico">
 
     <!-- FONT AWESOME CDN -->
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-hQpvDQiCJaD2H465dQfA717v7lu5qHWtDbWNPvaTJ0ID5xnPUlVXnKzq7b8YUkbN" crossorigin="anonymous">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-hQpvDQiCJaD2H465dQfA717v7lu5qHWtDbWNPvaTJ0ID5xnPUlVXnKzq7b8YUkbN" crossorigin="anonymous">
     <!-- BOOTSTRAP CSS CDN -->
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     
 <link rel="stylesheet" href="/dns-checker.css"/>
 
@@ -36,19 +36,19 @@
     <![endif]-->
 
     <!-- ANGULAR does some things with CSS so it's good to load this in the head -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular-animate.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular-resource.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular-sanitize.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular-cookies.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-touch/1.5.5/angular-touch.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular-animate.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular-resource.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular-sanitize.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular-cookies.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-touch/1.5.5/angular-touch.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.min.js"></script>
 
     <!--  MOMENT.JS :  --> 
     <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/locale/fr.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/locale/fr.js"></script>
     <!-- Angular Moment -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-moment/0.10.3/angular-moment.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-moment/0.10.3/angular-moment.min.js"></script>
 </head>
 
 <body>
@@ -71,6 +71,7 @@
 
 // Load Modules
 var myApp = angular.module('myApp', [
+    // Core modules
     'ngResource',
     'ngAnimate',
     'ngCookies',
@@ -78,14 +79,17 @@ var myApp = angular.module('myApp', [
     'ngSanitize',
     'angularMoment',
     'ui.bootstrap',
-    //
+    // App module
     'angular-dns-propagation-checker'
 ]);
 
+// Set API Endpoints
 myApp.config(['dnsCheckerProvider',
     function(dnsCheckerProvider)
     {
+        // Get Node List 
         dnsCheckerProvider.setApiListDns('api/php/get_nodes.php');
+        // Query One Node
         dnsCheckerProvider.setApiGetDns('api/php/get_node.php');
     }
 ]);
