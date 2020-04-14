@@ -1,6 +1,6 @@
 {
   "name": "angular-dns-propagation-checker",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "make DNS propagation check in your AngularJS App",
   "main": "index.js",
   "dependencies": {},
