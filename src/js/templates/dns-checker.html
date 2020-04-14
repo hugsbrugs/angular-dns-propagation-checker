@@ -2,58 +2,58 @@
 
     <div class="col-md-4" id="toolbar" >
 
-        <div class="panel panel-default">
+        <div class="card">
             
-            <div class="panel-heading">
-                <h3 class="panel-title">Options</h3>
+            <div class="card-header">
+                <h3 class="card-title">Options</h3>
             </div>
         
-            <div class="panel-body">
+            <div class="card-body">
 
                 <!-- <iframe name="autocomplete_host" id="autocomplete-host" src=""></iframe> -->
 
                 <form name="DnsForm" ng-submit="check_all_dns()" novalidate>
 
-                    <div class="form-group">
-                        <label for="domain">Domain</label>
-                        <div class="input-group">
-                            <span class="input-group-addon">http://</span>
-                            <input
-                                type="text"
-                                class="form-control"
-                                id="domain"
-                                name="domain"
-                                ng-model="domain.url"
-                                required required="required">
+                    <label for="domain">Domain</label>
+                    <div class="input-group">    
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">http://</span>
                         </div>
+                        <input
+                            type="text"
+                            class="form-control"
+                            id="domain"
+                            name="domain"
+                            ng-model="domain.url"
+                            required required="required">
                     </div>
 
-                    <div class="form-group">
+                    <div class="input-group">
                         <label for="record-type">Record Type</label>
 
-                        <div class="btn-group">
+                        <div class="btn-group" role="group">
                             <label
-                                class="btn btn-sm btn-default"
+                                class="btn btn-sm btn-secondary"
                                 ng-model="domain.record" uib-btn-radio="'a'">A
                             </label>
                             <label
-                                class="btn btn-sm btn-default"
+                                class="btn btn-sm btn-secondary"
                                 ng-model="domain.record" uib-btn-radio="'cname'">CNAME
                             </label>
                             <label
-                                class="btn btn-sm btn-default"
+                                class="btn btn-sm btn-secondary"
                                 ng-model="domain.record" uib-btn-radio="'mx'">MX
                             </label>
                             <label
-                                class="btn btn-sm btn-default"
+                                class="btn btn-sm btn-secondary"
                                 ng-model="domain.record" uib-btn-radio="'ns'">NS
                             </label>
                             <label
-                                class="btn btn-sm btn-default"
+                                class="btn btn-sm btn-secondary"
                                 ng-model="domain.record" uib-btn-radio="'spf'">SPF
                             </label>
                             <label
-                                class="btn btn-sm btn-default"
+                                class="btn btn-sm btn-secondary"
                                 ng-model="domain.record" uib-btn-radio="'txt'">TXT
                             </label>
                         </div>
@@ -71,7 +71,7 @@
 
                     <div class="form-group">
                         <button
-                            class="btn btn-default pull-right"
+                            class="btn btn-secondary float-right"
                             type="submit"
                             id="go"
                             ng-disabled="DnsForm.$invalid || dns_check_running"
@@ -83,8 +83,8 @@
             </div>
         </div>
 
-        <div class="panel panel-default">
-            <div class="panel-body">
+        <div class="card mt-3">
+            <div class="card-body">
                 
                 <i class="fa fa-book"></i> <a href="http://www.dns-lg.com/" target="_blank">API Documentation</a>
                 <hr>
@@ -104,14 +104,14 @@
         <!-- {{nodes|json}} -->
 
         <!-- Progress Bar -->
-        <uib-progress ng-hide="check.total==0" max="check.total" value="check.current" class="progress-striped" animate="true">
-            <uib-bar value="check.success" type="success">
+        <uib-progress ng-hide="check.total==0" max="check.total" value="check.current" striped="true" animate="true">
+            <uib-bar value="check.success" type="success" striped="true">
                 <i>{{((check.success/check.total)*100) | number:0}}%</i>
             </uib-bar>
-            <uib-bar value="check.warning" type="warning">
+            <uib-bar value="check.warning" type="warning" striped="true">
                 <i>{{((check.warning/check.total)*100) | number:0}}%</i>
             </uib-bar>
-            <uib-bar value="check.danger" type="danger">
+            <uib-bar value="check.danger" type="danger" striped="true">
                 <i>{{((check.danger/check.total)*100) | number:0}}%</i>
             </uib-bar>        
         </uib-progress>
@@ -121,7 +121,7 @@
         
         <!-- DNS Nodes Table -->
         <div class="table-responsive">
-        <table class="table table-condensed">
+        <table class="table table-sm">
             <thead>
                 <tr>
                     <th>Server</th>

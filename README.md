@@ -19,9 +19,9 @@ This can be a good starter place to learn AngularJS because it involves followin
 
 Font Awesome
 
-Angular (Animate, Resource, Sanitize, Cookies, Touch)
+AngularJS (Animate, Resource, Sanitize, Cookies, Touch)
 
-Angular UI Bootstrap  
+Angular UI Bootstrap 4
 
 Angular Moment (Moment.js)
 
